@@ -1,12 +1,11 @@
 
 console.log("Computer will choose now...");
-
 function getComputerChoice() {
    let choices = ["ROCK", "PAPER", "SCISSORS"];
    let computerChoice = 0;
    computerChoice= Math.floor(Math.random() * (2 - 0 + 1) + 0);
    console.log(choices[computerChoice]);
-
+   console.log(computerChoice);
    computerChoice = choices[computerChoice];
    return computerChoice
    //console.log(computerChoice);
@@ -39,12 +38,34 @@ function playRound(playerSelection,computerSelection) {
       console.log("Player wins");
    }
 }
+
+function game() {
+   //play the game 5 times 
+   rounds = 0;
+   playerWins = 0;
+   computerWins = 0;
+   for (let i =0; i <5; i++) {
+      console.log("new round begins");
+      const playerSelection = "rock";
+      const computerSelection = getComputerChoice();
+      output = playRound(playerSelection, computerSelection);
+      //console.log(typeOf output);
+      if (output === "Player wins") {
+         playerWins += 1;
+         console.log("player has won " + playerWins + " rounds");
+      }
+      else {
+         computerWins += 1;
+         console.log("computer has won " + computerWins + " rounds");
+      }
+      console.log("round " + rounds + " is over!")
+      rounds += 1;
+   }
+   console.log("total rounds: " + rounds + " computer score: " + computerWins + " player score: " + playerWins);
+}
 /*
 let player_input = prompt("Please choose: Rock, Paper, Scissors");
 console.log("Player chose, " + input + "!");
 player_input = input.toUpperCase();
 */ 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
-// getComputerChoice()
+game()
