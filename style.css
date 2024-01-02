@@ -1,0 +1,43 @@
+body {
+   background-color: #87d487;
+}
+.options {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .player-buttons,
+ .computer-buttons,
+ .clickable {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start; /* Aligns items to the start (left) */
+ }
+
+ .choices-container {
+   display: flex;
+   justify-content: space-between;
+ }
+
+h1 {
+   text-align: center;
+}
+
+.computer-text {
+   text-align: right;
+}
+
+.player-text{
+   text-align: left;
+}
+
+img {
+   width: 225px; 
+   height: auto; 
+   margin-bottom: 15px; 
+   border-radius: 15%;
+}
+
+.selected {
+   border: 2px solid red;
+ }

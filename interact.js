@@ -1,71 +1,83 @@
+console.log("new round begins");
+      // Get all clickable images
+   const clickableImages = document.querySelectorAll('.clickable');
+   console.log(clickableImages);
+   clickableImages.forEach((clickableImages)=>{clickableImages.addEventListener('click',()=>{
 
-console.log("Computer will choose now...");
+      playerChoice = clickableImages.id;
+      if (playerChoice == "rocks"){
+          playerChoiceInt = 0;
+      }
+      else if (playerChoice == "papers"){
+          playerChoiceInt = 1;
+      }
+      else if (playerChoice == "scissors")
+      {
+          playerChoiceInt = 2;
+      }
+      console.log(playerChoiceInt);
+      //compChoiceInt = computerPlay(compChoice);
+      //playGame();
+      })
+   });
 function getComputerChoice() {
+   console.log("Computer will choose now...");
    let choices = ["ROCK", "PAPER", "SCISSORS"];
    let computerChoice = 0;
    computerChoice= Math.floor(Math.random() * (2 - 0 + 1) + 0);
    console.log(choices[computerChoice]);
    console.log(computerChoice);
    computerChoice = choices[computerChoice];
+
    return computerChoice
    //console.log(computerChoice);
    
 }
 
-function playRound(playerSelection,computerSelection) {
+/*function playRound(playerSelection,computerSelection) {
    playerSelection = playerSelection.toUpperCase();
-   if (playerSelection === computerSelection) {
-      console.log("there is a tie, replay this round");
-      computerSelection = getComputerChoice();
-      playRound(playerSelection, computerSelection);
+   if ((playerSelection == 'ROCK' && computerSelection == 'SCISSORS') ||
+        (playerSelection == 'SCISSORS' && computerSelection == 'PAPER') ||
+        (playerSelection == 'PAPER' && computerSelection == 'ROCK')) {
+        //playerScore += 1
+        return "Player wins"
    }
-   else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-      console.log("Player wins");
-   }
-   else if (computerSelection === "PAPER" && playerSelection === "ROCK") {
-      console.log("Computer wins");
-   }
-   else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-      console.log("Player wins");
-   }
-   else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-      console.log("Computer wins");
-   }
-   else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-      console.log("Computer wins");
+   else if (playerSelection == computerSelection) {
+      //tie replay the round
+      getComputerChoice()
+      playRound()
    }
    else {
-      console.log("Player wins");
+      return "Computer wins"
    }
-}
 
-function game() {
-   //play the game 5 times 
-   rounds = 0;
-   playerWins = 0;
-   computerWins = 0;
-   for (let i =0; i <5; i++) {
-      console.log("new round begins");
-      const playerSelection = "rock";
-      const computerSelection = getComputerChoice();
-      output = playRound(playerSelection, computerSelection);
-      //console.log(typeOf output);
-      if (output === "Player wins") {
-         playerWins += 1;
-         console.log("player has won " + playerWins + " rounds");
-      }
-      else {
-         computerWins += 1;
-         console.log("computer has won " + computerWins + " rounds");
-      }
-      console.log("round " + rounds + " is over!")
-      rounds += 1;
    }
-   console.log("total rounds: " + rounds + " computer score: " + computerWins + " player score: " + playerWins);
-}
-/*
-let player_input = prompt("Please choose: Rock, Paper, Scissors");
-console.log("Player chose, " + input + "!");
-player_input = input.toUpperCase();
-*/ 
-game()
+   */
+ //1)doing the most basic thing, select the rock tile, red border appears around rock tile 
+   //2)next step save the rock selection into memory as the player selection
+   //3)call the computer selection 
+function game() {
+   console.log("game function");
+      /*function handleClick(event) {
+         const altText = event.target.alt;
+         console.log('Alt text:', altText); // You can store, manipulate, or use this alt text as needed
+       }
+      
+      clickableImages.forEach(image => {
+         image.addEventListener('click', () => {
+         // Remove 'selected' class from all images
+         clickableImages.forEach(img => img.classList.remove('selected'));
+    
+         // Add 'selected' class to the clicked image
+         image.classList.add('selected');
+         });
+      });
+      */
+
+   }//end game function
+   
+      /*clickableImages.forEach(image => {
+         image.addEventListener('click', handleClick);
+       });
+*/  
+//game()
